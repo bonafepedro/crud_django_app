@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP CARGAS EN DJANGO</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+
+
+            {% if user.is_authenticated %}
+
+            <li>
+                <a href="/personas">Listado de Personas</a>
+            </li>
+
+            <li>
+                <a href="/personas/agregar">Agregar Persona</a>
+            </li>
+
+            <li>
+                <a href="/familias">Listado de Familias</a>
+            </li>
+
+            <li>
+                <a href="/familias/agregar/">Agregar Familias</a>
+            </li>
+
+            <li>
+                <a href="/ayudas">Listado de Ayudas Económicas</a>
+            </li>
+
+            <li>
+                <a href="/ayudas/agregar/">Agregar Ayuda Económica</a>
+            </li>
+
+
+            <li>
+                <a href="/prestaciones">Listado de Prestaciones</a>
+            </li>
+
+            <li>
+                <a href="/prestaciones/agregar/">Agregar Prestación</a>
+            </li>
+
+
+            <li>
+                <a href="/programas/">Listado de Programas</a>
+            </li>
+
+
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+
+            {% else %}
+
+
+            <li>
+                <a href="/signin">Signin</a>
+            </li>
+
+            <li>
+                <a href="/signup">Signup</a>
+            </li>
+
+            {% endif %}
+
+        </ul>
+
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends 'base_programas.html' %}
+
+{% block content %}
+
+<h1>
+    Ayudas Economicas
+    
+
+</h1>
+
+<ul>
+    {% for ayuda in ayudas %}
+
+    <li>
+        <a href="{% url 'actualizar_ayudas' ayuda.id %}">
+            <h2>{{ayuda.id_beneficiario}} </h2>
+            <p>
+                {{ayuda.monto}}
+                {{ayuda.fecha}}
+                {{ayuda.motivo}}
+            </p>
+            <p>
+                {{ayuda.usuario_creador.username}}
+            </p>
+        </a>
+
+    </li>
+
+
+    {% endfor %}
+</ul>
+
+
+
+{% endblock %}
+
+

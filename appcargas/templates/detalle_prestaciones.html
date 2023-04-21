@@ -1,0 +1,24 @@
+{% extends 'base_programas.html' %}
+
+{% block content %}
+
+<h1>
+    {{prestacion.id_beneficiario}}
+</h1> 
+
+<form  method="POST">
+
+    {% csrf_token %}
+
+    {{error}}
+
+    {{form.as_p}}
+    <button>
+        Update
+    </button>
+
+
+
+</form>
+
+{% endblock %}

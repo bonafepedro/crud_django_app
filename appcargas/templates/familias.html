@@ -1,0 +1,35 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>
+    Familias
+    
+
+</h1>
+
+<ul>
+    {% for familia in familias %}
+
+    <li>
+        <h2>{{familia.apellido}} </h2>
+        <p>
+            {{familia.direccion}}
+            {{familia.cantidad}}
+        </p>
+        <p>
+            {{familia.usuario_creador.username}}
+        </p>
+    </li>
+
+
+    {% endfor %}
+</ul>
+
+
+
+{% endblock %}
+
+

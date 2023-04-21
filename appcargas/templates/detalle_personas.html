@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>
+    {{persona.nombre}}
+</h1> 
+
+<form  method="POST">
+
+    {% csrf_token %}
+
+    {{error}}
+
+    {{form.as_p}}
+    <button>
+        Update
+    </button>
+
+
+
+</form>
+
+{% endblock %}
+
+<!-- 
+<form action="/agregar_personas/" method="POST">
+
+    {% csrf_token %}
+
+    {{error}}
+
+    {{form.as_p}}
+    <button>
+        Save
+    </button>
+
+
+
+</form> -->

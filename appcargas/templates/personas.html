@@ -1,0 +1,38 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>
+    Personas
+
+</h1>
+
+<ul>
+    {% for persona in personas %}
+
+    <li>
+        <a href="{% url 'actualizar_personas' persona.id %}">
+            <h2>{{persona.nombre}} {{persona.apellido}} </h2>
+            <p>
+                {{persona.cuil}}
+                {{persona.genero}}
+                {{persona.estado_civil}}
+            </p>
+            <p>
+                {{persona.usuario_creador.username}}
+            </p>
+        </a>
+
+    </li>
+
+
+    {% endfor %}
+</ul>
+
+
+
+{% endblock %}
+
+

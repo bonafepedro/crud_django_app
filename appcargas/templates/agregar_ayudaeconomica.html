@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>
+    Aca vamos a cargar una ay ec
+
+</h1>
+
+<form action="/ayudas/agregar/" method="POST">
+
+    {% csrf_token %}
+
+    {{error}}
+
+    {{form.as_p}}
+
+    <button>
+        Save
+    </button>
+
+
+
+</form>
+
+{% endblock %}
+
+
+<!-- 
+<body>
+    <h1>Welcome to GFG</h1>
+    <input type="text" id="tags">
+    <script>
+  $( function() {
+    var availableTags = [
+        {% for language in languages %}
+            "{{language.name}}",
+        {% endfor %}
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+</body>
+</html>
+ -->

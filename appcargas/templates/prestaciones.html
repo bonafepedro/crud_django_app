@@ -1,0 +1,35 @@
+{% extends 'base_programas.html' %}
+
+{% block content %}
+
+<h1>
+    Prestaciones
+    
+
+</h1>
+
+<ul>
+    {% for prestacion in prestaciones %}
+
+    <li>
+        <a href="{% url 'actualizar_prestacion' prestacion.id %}">
+            <h2>{{prestacion.id_beneficiario}} </h2>
+            <p>
+                {{prestacion.producto}}
+                {{prestacion.cantidad}}
+                {{prestacion.estado}}
+            </p>
+            <p>
+                {{prestacion.usuario_creador.username}}
+            </p>
+        </a>
+
+    </li>
+
+
+    {% endfor %}
+</ul>
+
+
+
+{% endblock %}

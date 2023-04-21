@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>
+    Aca vamos a cargar una Prestacion
+
+</h1>
+
+<form action="/prestaciones/agregar/" method="POST">
+
+    {% csrf_token %}
+
+    {{error}}
+
+    {{form.as_p}}
+
+    <button>
+        Save
+    </button>
+
+
+
+</form>
+
+{% endblock %}
+
