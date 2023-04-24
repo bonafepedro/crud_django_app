@@ -21,6 +21,14 @@
 
 </form>
 
+
+
+
+<form action="{% url 'eliminar_personas' person_id=persona.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+</form>
+
 {% endblock %}
 
 <!-- 

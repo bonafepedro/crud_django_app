@@ -154,6 +154,19 @@ def update_person(request, person_id):
                               'form': form,
                               'error': 'Error actualizando datos'
                           })
+        
+
+def delete_person(request, person_id):
+
+    if request.method == 'POST':
+
+        persona = get_object_or_404(
+            Personas, pk= person_id, usuario_creador=request.user)
+        persona.delete()
+
+        return redirect('listado_personas')
+
+
 
 # Bloque familias
 
